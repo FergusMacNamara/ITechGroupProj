@@ -1,3 +1,8 @@
 from django.contrib import admin
+from gugrub.models import Eatery, Review
 
-# Register your models here.
+class EateryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug':('name',)}
+
+admin.site.register(Eatery, EateryAdmin)
+admin.site.register(Review)

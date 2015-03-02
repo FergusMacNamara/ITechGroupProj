@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>GUGrubGuide</title>
+    </head>
+
+    <body>
+    <img src="{% static "images/logo.png" %}" alt="GUGrubGuide Logo" />
+
+        {% if eateries %}
+            <ul>
+                {% for eatery in eateries %}
+                <li><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no eateries present.</strong>
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GuGrubGuide</title>
+    </head>
+
+    <body>
+        <h1>{{ eatery_name }}</h1>
+        {% if eatery %}
+            {% if reviews %}
+            <ul>
+                {% for review in reviews %}
+                <li>{{ review.title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>No reviews currently.</strong>
+            {% endif %}
+        {% else %}
+            The specified eatery {{ eatery_name }} does not exist!
+        {% endif %}
+        <a href="/gugrub/add_review/">Add a Review</a><br />
+    </body>
+</html>
+
