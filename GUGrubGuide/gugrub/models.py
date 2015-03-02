@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from datetime import datetime
 
 class Eatery(models.Model):
         name = models.CharField(max_length=128, unique=True)
@@ -25,13 +26,14 @@ class Eatery(models.Model):
 class Review(models.Model):
         eatery = models.ForeignKey(Eatery)
         reviewer = models.ForeignKey(User)
+        date = models.DateTimeField(default=datetime.now, blank=True)
         title = models.CharField(max_length=128)
         description = models.TextField()
-        qualityRating = models.PositiveIntegerField(default=0)
-        valueRating = models.PositiveIntegerField(default=0)
-        atmosphereRating = models.PositiveIntegerField(default=0)
-        serviceRating = models.PositiveIntegerField(default=0)
-        recommendRating = models.PositiveIntegerField(default=0)
+        qualityRating = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(5), MinValueValidator(0)])
+        valueRating = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(5), MinValueValidator(0)])
+        atmosphereRating = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(5), MinValueValidator(0)])
+        serviceRating = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(5), MinValueValidator(0)])
+        recommendRating = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(5), MinValueValidator(0)])
         picture = models.ImageField(upload_to='review_images', blank=True)
 
 

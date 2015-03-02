@@ -14,20 +14,6 @@ def populate():
                                loc="Boyd Orr Building [D1]",
                                desc="Freshly made sandwiches, soup, home baking, hot & cold drinks",
                                url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
-    cafe_picolin2 = add_eatery(name="Cafe Picolin2",
-                               loc="Boyd Orr Building [D1]",
-                               desc="Freshly made sandwiches, soup, home baking, hot & cold drinks",
-                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
-    cafe_picolin3 = add_eatery(name="Cafe Picolin3",
-                               loc="Boyd Orr Building [D1]",
-                               desc="Freshly made sandwiches, soup, home baking, hot & cold drinks",
-                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
-    cafe_picolin4 = add_eatery(name="Cafe Picolin4",
-                               loc="Boyd Orr Building [D1]",
-                               desc="Freshly made sandwiches, soup, home baking, hot & cold drinks",
-                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
-
-    print("Hello")
 
     user = add_user(username="fmacn",
                     email="f.macnamara1@hotmail.com",

@@ -19,7 +19,9 @@
         {% else %}
             The specified eatery {{ eatery_name }} does not exist!
         {% endif %}
-        <a href="/gugrub/add_review/">Add a Review</a><br />
+        {% if user.is_authenticated %}
+        <a href="{% url 'add_eatery_review' eatery.slug %}">Add a Review</a><br />
+        {% endif %}
     </body>
 </html>
 
