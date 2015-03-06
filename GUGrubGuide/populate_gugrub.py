@@ -15,9 +15,49 @@ def populate():
                                desc="Freshly made sandwiches, soup, home baking, hot & cold drinks",
                                url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
 
-    cafe_picolino2 = add_eatery(name="Cafe Picolino",
-                               loc="Boyd Orr Building [D1]",
-                               desc="Freshly made sandwiches, soup, home baking, hot & cold drinks",
+    cafe_forthought = add_eatery(name="Food for thought",
+                               loc="The Fraser Building, level 3[E2]",
+                               desc="For students, staff and visitors to the campus: hot meals and snacks",
+                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
+
+    cafe_togo = add_eatery(name="Food to go",
+                               loc="The Fraser Building, level 3[E2]",
+                               desc="'Food to go' offers everything you need",
+                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
+
+    cafe_thesquare = add_eatery(name="One A The Square",
+                               loc="The Fraser Building, level 3[E2]",
+                               desc="For students, staff and visitors to the campus: hot meals and snacks",
+                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
+
+    cafe_atrium = add_eatery(name="Atrium Cafe",
+                               loc="Wolfson Medical School Building[C8]",
+                               desc="Freshly made sandwiches, baked potatoes, baguettes, soup, home baking, confectionery, hot & cold drinks",
+                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
+
+    cafe_standrews = add_eatery(name="St Andrews Building Cafe",
+                               loc="STAC [E14]",
+                               desc="Breakfast rolls, freshly made sandwiches, baked potatoes, soup, home baking, confectionary, hot & cold drinks",
+                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
+
+    cafe_links = add_eatery(name="Links Cafe",
+                               loc="off the Courtyard, Wolfson Building[B10]",
+                               desc="For students, staff and visitors to the campus: hot meals and snacks",
+                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
+
+    garscube_campus = add_eatery(name="Food farm",
+                               loc="School of Veterinary Medicine",
+                               desc="Breakfast, brasserie-style lunch offer, baked potatoes, baguettes, soup, sandwiches, hot & cold drinks",
+                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
+
+    cafe_focus = add_eatery(name="Food in focus",
+                               loc="Level 3, University Library [D11]",
+                               desc="For students, staff and visitors to the campus: hot meals and snacks",
+                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
+
+    cafe_postgrad = add_eatery(name="Gilchrist Postgraduate Club",
+                               loc="Gilbert Scott Building [A26]",
+                               desc="For postgraduate students and staff. University ID/Registration card required for swipe entry system Monday to Friday",
                                url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
 
     user = add_user(username="fmacn",
