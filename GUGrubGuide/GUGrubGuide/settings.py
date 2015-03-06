@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gugrub',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,4 +100,14 @@ TEMPLATE_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_URL = '/gugrub/login/'
+REGISTRATION_OPEN = True
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/gugrub/'
+LOGIN_URL = '/accounts/login/'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'gugrubguide@gmail.com'
+EMAIL_HOST_PASSWORD = 'grubguide'
+EMAIL_PORT = 587

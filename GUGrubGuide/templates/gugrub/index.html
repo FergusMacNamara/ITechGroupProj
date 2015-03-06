@@ -1,26 +1,14 @@
-<!DOCTYPE html>
+{% extends 'gugrub/base.html' %}
 
 {% load staticfiles %}
 
-<html>
-    <head>
-        <title>GUGrubGuide</title>
-    </head>
+{% block title %}Home{% endblock %}
 
-    <body>
-    {% if user.is_authenticated %}
+{% block body_block %}
+        {% if user.is_authenticated %}
     <h1>Hello {{ user.username }}!</h1>
     </br>
     <a href="/gugrub/add_new_review/">New Review</a><br />
-    </br>
-    <a href="/gugrub/logout/">Logout</a><br />
-    {% else %}
-    <a href="/gugrub/login/">Login</a>
-    </br>
-    Or
-    </br>
-    <a href="/gugrub/register/">Register Here</a>
-    </br>
     {% endif %}
     <img src="{% static "images/logo.png" %}" alt="GUGrubGuide Logo" />
 
@@ -33,5 +21,4 @@
         {% else %}
             <strong>There are no eateries present.</strong>
         {% endif %}
-    </body>
-</html>
+{% endblock %}

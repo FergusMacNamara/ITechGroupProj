@@ -15,6 +15,11 @@ def populate():
                                desc="Freshly made sandwiches, soup, home baking, hot & cold drinks",
                                url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
 
+    cafe_picolino2 = add_eatery(name="Cafe Picolino",
+                               loc="Boyd Orr Building [D1]",
+                               desc="Freshly made sandwiches, soup, home baking, hot & cold drinks",
+                               url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
+
     user = add_user(username="fmacn",
                     email="f.macnamara1@hotmail.com",
                     pw="password",
