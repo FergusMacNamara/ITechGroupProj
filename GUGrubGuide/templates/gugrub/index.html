@@ -6,7 +6,9 @@
 
 {% block body_block %}
         {% if user.is_authenticated %}
-    <h1>Hello {{ user.username }}!</h1>
+     <div class="page-header">
+         <h1>Hello {{ user.username }}!</h1>
+     </div>
     </br>
     <a href="/gugrub/add_new_review/">New Review</a><br />
     {% endif %}

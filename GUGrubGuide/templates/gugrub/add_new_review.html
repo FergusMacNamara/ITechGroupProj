@@ -5,8 +5,9 @@
 {% block title %}New Review{% endblock %}
 
 {% block body_block %}
+    <div class="page-header">
         <h1>Add a Review</h1>
-
+    </div>
         <form id="review_form" method="post" action="/gugrub/add_new_review/" enctype="multipart/form-data">
 
             {% csrf_token %}
