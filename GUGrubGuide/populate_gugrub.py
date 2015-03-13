@@ -76,6 +76,16 @@ def populate():
                 servR=4,
                 recR=3)
 
+    add_review(eatery=cafe_postgrad,
+                rvr= user,
+                title="Boyd Orr Cafe",
+                desc="Review text here",
+                qualR=4,
+                valR=2,
+                atmosR=3,
+                servR=4,
+                recR=3)
+
 def add_eatery(name, loc, desc, url):
     p = Eatery.objects.get_or_create(name=name,
                                      location=loc,

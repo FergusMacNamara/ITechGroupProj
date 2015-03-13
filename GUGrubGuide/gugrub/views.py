@@ -4,11 +4,20 @@ from gugrub.models import Eatery, Review
 from gugrub.forms import EateryReviewForm,NewReviewForm, UserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.db.models import Avg
 
 
 def index(request):
-    eatery_list = Eatery.objects.order_by('name')[:5]
-    context_dict = {'eateries': eatery_list}
+    eatery_list = Eatery.objects.order_by('averageRating')
+
+    avgRating = []
+    for eatery in eatery_list:
+        reviews = Review.objects.filter(eatery=eatery)
+        avgQ = reviews.aggregate(Avg('finalRating'))
+        avgRating.append(avgQ['finalRating__avg'])
+
+    output = zip(eatery_list, avgRating)
+    context_dict = {'eateries': output, 'averageRating': avgRating}
 
     # Render the response and send it back!
     return render(request, 'gugrub/index.html', context_dict)
@@ -24,9 +33,13 @@ def eatery(request, eatery_name_slug):
 
         reviews = Review.objects.filter(eatery=eatery)
 
+        avgQ = reviews.aggregate(Avg('finalRating'))
+
         context_dict['reviews'] = reviews
 
         context_dict['eatery'] = eatery
+
+        context_dict['avgQ'] = avgQ
     except Eatery.DoesNotExist:
 
         pass

@@ -11,11 +11,11 @@ class Eatery(models.Model):
         description = models.TextField()
         url = models.URLField()
         averageRating = models.FloatField(default=0)
-        averagequalityRating = models.FloatField(default=0)
-        averagevalueRating = models.FloatField(default=0)
-        averageatmosphereRating = models.FloatField(default=0)
-        averageserviceRating = models.FloatField(default=0)
-        averagerecommendRating = models.FloatField(default=0)
+        averageQualityRating = models.FloatField(default=0)
+        averageValueRating = models.FloatField(default=0)
+        averageAtmosphereRating = models.FloatField(default=0)
+        averageServiceRating = models.FloatField(default=0)
+        averageRecommendRating = models.FloatField(default=0)
         slug = models.SlugField(unique=True)
 
         def save(self, *args, **kwargs):
