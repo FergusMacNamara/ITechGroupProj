@@ -160,7 +160,7 @@ def populate():
     add_review(eatery=cafe_focus,
                 rvr= user,
                 title="Level 3, University Library [D11]",
-                desc="Review here",
+                desc="Review text here",
                 qualR=4,
                 valR=2,
                 atmosR=3,
