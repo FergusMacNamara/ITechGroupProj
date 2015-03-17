@@ -8,17 +8,18 @@ from django.db.models import Avg
 
 
 def index(request):
+
+    context_dict = {}
+
     eatery_list = Eatery.objects.order_by('averageRating')
 
-    avgRating = []
     for eatery in eatery_list:
         reviews = Review.objects.filter(eatery=eatery)
-        avgQ = reviews.aggregate(Avg('finalRating'))
-        avgRating.append(avgQ['finalRating__avg'])
+        eatery.averageRating = reviews.aggregate(Avg('finalRating'))
+        eatery.averageQualityRating = reviews.aggregate(Avg('qualityRating'))
 
-    output = zip(eatery_list, avgRating)
 
-    context_dict = {'eateries': output, 'averageRating': avgRating}
+    context_dict['eateries'] = eatery_list
 
     # Render the response and send it back!
     return render(request, 'gugrub/index.html', context_dict)
