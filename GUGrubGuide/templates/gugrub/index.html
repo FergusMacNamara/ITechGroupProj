@@ -13,12 +13,13 @@
     <a href="/gugrub/add_new_review/">New Review</a><br />
     {% endif %}
     <img src="{% static "images/logo.png" %}" alt="GUGrubGuide Logo" />
+    <img src="{{MEDIA_URL}}review_images/hello.png"/>
     <p>{{ avgQ }}</p>
 
         {% if eateries %}
             <ul>
                 {% for eatery in eateries %}
-                <li><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.0.name }} {{ eatery.1 }}</li>
+                <li><a href="/gugrub/eatery/{{ eatery.0.slug }}">{{ eatery.0.name }} {{ eatery.1 }}</li>
                 {% endfor %}
             </ul>
         {% else %}
