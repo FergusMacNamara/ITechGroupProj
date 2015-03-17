@@ -5,23 +5,41 @@
 {% block title %}Home{% endblock %}
 
 {% block body_block %}
-        {% if user.is_authenticated %}
-     <div class="page-header">
+
+    {% if user.is_authenticated %}
+    <div class="page-header">
          <h1>Hello {{ user.username }}!</h1>
-     </div>
+    </div>
     </br>
     <a href="/gugrub/add_new_review/">New Review</a><br />
     {% endif %}
-    <img src="{% static "images/logo.png" %}" alt="GUGrubGuide Logo" />
-    <p>{{ avgQ }}</p>
 
-        {% if eateries %}
-            <ul>
-                {% for eatery in eateries %}
-                <li><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.0.name }} {{ eatery.1 }}</li>
-                {% endfor %}
-            </ul>
+    <div class="jumbotron">
+        <div class="container">
+            <img src="{% static "images/logo.png" %}" alt="GUGrubGuide Logo" />
+            <h1>Welcome!</h1>
+            <p>The Glasgow Univeristy Grub Guide allows you to rate your (least) favourite cafes, resturants and coffee shops on  the glasgow
+            University campus.</p>
+        </div>
+    </div>
+
+    <p>{{ avgQ }}</p>
+    <div class="container">
+        {%if eateries %}
+        <div>
+            {% for eatery in eateries %}
+            <div class="row">
+                <div class="col-md-4">
+                <h2><a href="/gugrub/eatery/{{ eatery.0.slug }}">{{ eatery.0.name }} {{ eatery.1 }}</a></h2>
+                <p>Preview goes here. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div>
+            </div>
+            {% endfor %}
         {% else %}
             <strong>There are no eateries present.</strong>
         {% endif %}
+        </div>
+    </div>
+
 {% endblock %}
