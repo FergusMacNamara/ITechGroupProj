@@ -8,16 +8,17 @@ from django.db.models import Avg
 
 
 def index(request):
+
+    context_dict = {}
+
     eatery_list = Eatery.objects.order_by('averageRating')
 
-    avgRating = []
     for eatery in eatery_list:
         reviews = Review.objects.filter(eatery=eatery)
-        avgQ = reviews.aggregate(Avg('finalRating'))
-        avgRating.append(avgQ['finalRating__avg'])
+        eatery.averageRating = reviews.aggregate(Avg('finalRating')).get('finalRating__avg')
 
-    output = zip(eatery_list, avgRating)
-    context_dict = {'eateries': output, 'averageRating': avgRating}
+
+    context_dict['eateries'] = eatery_list
 
     # Render the response and send it back!
     return render(request, 'gugrub/index.html', context_dict)
@@ -29,18 +30,20 @@ def eatery(request, eatery_name_slug):
 
     try:
         eatery = Eatery.objects.get(slug=eatery_name_slug)
-        context_dict['eatery_name'] = eatery.name
-        context_dict['picture']=eatery.picture
 
         reviews = Review.objects.filter(eatery=eatery)
 
-        avgQ = reviews.aggregate(Avg('finalRating'))
+        eatery.averageQualityRating = reviews.aggregate(Avg('qualityRating')).get('qualityRating__avg', 0.00)
+        eatery.averageValueRating = reviews.aggregate(Avg('valueRating')).get('valueRating__avg', 0.00)
+        eatery.averageAtmosphereRating = reviews.aggregate(Avg('atmosphereRating')).get('atmosphereRating__avg', 0.00)
+        eatery.averageServiceRating = reviews.aggregate(Avg('serviceRating')).get('serviceRating__avg', 0.00)
+        eatery.averageRecommendRating = reviews.aggregate(Avg('recommendRating')).get('recommendRating__avg', 0.00)
 
         context_dict['reviews'] = reviews
 
         context_dict['eatery'] = eatery
 
-        context_dict['avgQ'] = avgQ
+
     except Eatery.DoesNotExist:
 
         pass

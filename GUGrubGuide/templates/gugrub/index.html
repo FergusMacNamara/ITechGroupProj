@@ -13,7 +13,6 @@
     </br>
     <a href="/gugrub/add_new_review/">New Review</a><br />
     {% endif %}
-<<<<<<< HEAD
 
     <div class="jumbotron">
         <div class="container">
@@ -31,10 +30,21 @@
             {% for eatery in eateries %}
             <div class="row">
                 <div class="col-md-4">
-                <h2><a href="/gugrub/eatery/{{ eatery.0.slug }}">{{ eatery.0.name }} {{ eatery.1 }}</a></h2>
+                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
                 <p>Preview goes here. </p>
                 <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                 </div>
+                <div class="col-md-4">
+                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
+                <p>Preview goes here. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div>
+                <div class="col-md-4">
+                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
+                <p>Preview goes here. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div>
+
             </div>
             {% endfor %}
         {% else %}
