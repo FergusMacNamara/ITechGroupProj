@@ -7,6 +7,9 @@
 {% block body_block %}
     <div class="page-header">
         <h1>{{ eatery_name }}</h1>
+        <h1>{{ picture }}</h1>
+        <img src="{% media "review_images/logo.png" %}" alt="GUGrubGuide Logo" />
+
     </div>
         <p>{{ avgQ }} </p>
         {% if eatery %}

@@ -18,7 +18,7 @@
         {% if eateries %}
             <ul>
                 {% for eatery in eateries %}
-                <li><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.0.name }} {{ eatery.1 }}</li>
+                <li><a href="/gugrub/eatery/{{ eatery.0.slug }}">{{ eatery.0.name }} {{ eatery.1 }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}

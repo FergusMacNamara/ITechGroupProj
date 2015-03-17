@@ -17,6 +17,7 @@ def index(request):
         avgRating.append(avgQ['finalRating__avg'])
 
     output = zip(eatery_list, avgRating)
+
     context_dict = {'eateries': output, 'averageRating': avgRating}
 
     # Render the response and send it back!
@@ -30,6 +31,7 @@ def eatery(request, eatery_name_slug):
     try:
         eatery = Eatery.objects.get(slug=eatery_name_slug)
         context_dict['eatery_name'] = eatery.name
+        context_dict['picture'] = eatery.picture
 
         reviews = Review.objects.filter(eatery=eatery)
 
@@ -40,6 +42,7 @@ def eatery(request, eatery_name_slug):
         context_dict['eatery'] = eatery
 
         context_dict['avgQ'] = avgQ
+
     except Eatery.DoesNotExist:
 
         pass
