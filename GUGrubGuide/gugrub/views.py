@@ -30,6 +30,7 @@ def eatery(request, eatery_name_slug):
     try:
         eatery = Eatery.objects.get(slug=eatery_name_slug)
         context_dict['eatery_name'] = eatery.name
+        context_dict['picture']=eatery.picture
 
         reviews = Review.objects.filter(eatery=eatery)
 

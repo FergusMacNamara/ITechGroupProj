@@ -13,6 +13,7 @@
     </br>
     <a href="/gugrub/add_new_review/">New Review</a><br />
     {% endif %}
+<<<<<<< HEAD
 
     <div class="jumbotron">
         <div class="container">
@@ -36,6 +37,18 @@
                 </div>
             </div>
             {% endfor %}
+=======
+    <img src="{% static "images/logo.png" %}" alt="GUGrubGuide Logo" />
+    <img src="{{MEDIA_URL}}review_images/hello.png"/>
+    <p>{{ avgQ }}</p>
+
+        {% if eateries %}
+            <ul>
+                {% for eatery in eateries %}
+                <li><a href="/gugrub/eatery/{{ eatery.0.slug }}">{{ eatery.0.name }} {{ eatery.1 }}</li>
+                {% endfor %}
+            </ul>
+>>>>>>> 0730bcf7e887dd66369ee2761fc07aa1c4325657
         {% else %}
             <strong>There are no eateries present.</strong>
         {% endif %}
