@@ -14,6 +14,7 @@
     <a href="/gugrub/add_new_review/">New Review</a><br />
     {% endif %}
 
+
     <div class="jumbotron">
         <div class="container">
             <img src="{% static "images/logo.png" %}" alt="GUGrubGuide Logo" />
@@ -31,6 +32,7 @@
             <div class="row">
                 <div class="col-md-4">
                 <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
+                  <!--<img src="{{MEDIA_URL}}{{eatery.picture}}"/>-->
                 <p>Preview goes here. </p>
                 <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                 </div>

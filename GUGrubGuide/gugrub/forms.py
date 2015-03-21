@@ -4,11 +4,22 @@ from django import forms
 from gugrub.models import Review, Eatery
 from django.contrib.auth.models import User
 
+from django.forms.fields import ChoiceField
+from django.forms.fields import MultipleChoiceField
+from django.forms.widgets import RadioSelect
+from django.forms.widgets import CheckboxSelectMultiple
+from django.forms.extras.widgets import SelectDateWidget
+
 class EateryReviewForm(forms.ModelForm):
+
+    CHOICES = (('1', 'One'), ('2', 'Two'),('3', 'Three'),('4', 'Four'),('5', 'Five'))
     date = forms.DateTimeInput
     title = forms.CharField(max_length=256, help_text="Please enter a title for your review.")
     description = forms.CharField(widget = forms.Textarea, help_text="Please describe your experience.")
-    qualityRating = forms.IntegerField(help_text="How would you rate the quality of the food/drink?", max_value=5, min_value=0)
+    qualityRating = forms.ChoiceField(choices=CHOICES, widget=RadioSelect, help_text="How would you rate the quality of the food/drink?",)
+    # quality= forms.ChoiceField(choices=CHOICES, widget=forms.RadioChoiceInput)
+
+    # choice_field = forms.ChoiceField(widget=forms.RadioSelect, choices=CHOICES)
     valueRating = forms.IntegerField(help_text="How would you rate the value of the food/drink?", max_value=5, min_value=0)
     atmosphereRating = forms.IntegerField(help_text="How would you rate the atmosphere?", max_value=5, min_value=0)
     serviceRating = forms.IntegerField(help_text="How would you rate the service?", max_value=5, min_value=0)
@@ -24,12 +35,21 @@ class EateryReviewForm(forms.ModelForm):
         model = Review
         fields = ('title', 'description', 'qualityRating', 'valueRating', 'atmosphereRating', 'serviceRating', 'recommendRating', 'picture')
 
+
+
 class NewReviewForm(forms.ModelForm):
+
+    CHOICES = (('1', 'One'), ('2', 'Two'),('3', 'Three'),('4', 'Four'),('5', 'Five'))
+
     eatery = forms.ModelChoiceField(queryset=Eatery.objects.all(), help_text="Please enter the eatery name.")
     date = forms.DateTimeInput
     title = forms.CharField(max_length=256, help_text="Please enter a title for your review.")
     description = forms.CharField(widget = forms.Textarea, help_text="Please describe your experience.")
-    qualityRating = forms.IntegerField(help_text="How would you rate the quality of the food/drink?", max_value=5, min_value=0)
+    # qualityRating = forms.IntegerField(help_text="How would you rate the quality of the food/drink?", max_value=5, min_value=0)
+    # choice_field = forms.ChoiceField(widget=forms.RadioSelect, choices=CHOICES)
+
+    qualityRating = forms.ChoiceField(choices=CHOICES, widget=RadioSelect, help_text="How would you rate the quality of the food/drink?",)
+
     valueRating = forms.IntegerField(help_text="How would you rate the value of the food/drink?", max_value=5, min_value=0)
     atmosphereRating = forms.IntegerField(help_text="How would you rate the atmosphere?", max_value=5, min_value=0)
     serviceRating = forms.IntegerField(help_text="How would you rate the service?", max_value=5, min_value=0)
