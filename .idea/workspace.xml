@@ -2,20 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2843e4b8-d302-4a5e-9222-5985312a7474" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/example.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GUGrubGuide/static/images/star-on.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GUGrubGuide/static/css/stylesheet.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GUGrubGuide/static/css/teststar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/teststart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUGrubGuide/db.sqlite3" afterPath="$PROJECT_DIR$/GUGrubGuide/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/add_eatery_review.html" afterPath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/add_eatery_review.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/add_new_review.html" afterPath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/add_new_review.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/base.html" afterPath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/eatery.html" afterPath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/eatery.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUGrubGuide/gugrub/forms.py" afterPath="$PROJECT_DIR$/GUGrubGuide/gugrub/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/index.html" afterPath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUGrubGuide/gugrub/views.py" afterPath="$PROJECT_DIR$/GUGrubGuide/gugrub/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ITechGroupProj.iws" />
@@ -84,8 +70,8 @@
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUGrubGuide/gugrub/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35560858" vertical-offset="751" max-vertical-offset="1170">
-              <caret line="60" column="60" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.6062052" vertical-offset="751" max-vertical-offset="1170">
+              <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
               <folding>
                 <element signature="e#23#47#0" expanded="true" />
               </folding>
@@ -774,12 +760,20 @@
       <option name="number" value="Default" />
       <updated>1426618281478</updated>
     </task>
+    <task id="LOCAL-00001" summary="star rating">
+      <created>1426959789195</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1426959789195</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="342" y="22" width="938" height="718" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24600638" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -817,6 +811,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="star rating" />
+    <option name="LAST_COMMIT_MESSAGE" value="star rating" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1120,8 +1116,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GUGrubGuide/gugrub/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35560858" vertical-offset="751" max-vertical-offset="1170">
-          <caret line="60" column="60" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.6062052" vertical-offset="751" max-vertical-offset="1170">
+          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
           <folding>
             <element signature="e#23#47#0" expanded="true" />
           </folding>
