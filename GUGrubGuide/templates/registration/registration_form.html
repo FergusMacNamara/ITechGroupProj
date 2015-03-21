@@ -3,24 +3,15 @@
 {% block body_block %}
 
 <div class="page-header">
-    <h1>Register Here</h1>
+    <h1>Sign Up Here</h1>
 </div>
-
-        <form method="post" action=".">
-                {% csrf_token %}
-
-
-                <input type="submit" value="Submit" />
-        </form>
-
 <form role="form"  method="post" action=".">
-    
+
     {% csrf_token %}
     <div class="container">
-        
+
         <!-- Again, this needs to be hooked up to the actual functionality of the form elements. -->
         <div class="col-sm-4">
-            <h2 class="form-signin-heading">Sign Up Here</h2>
 
             <div class="form-group" >
              <p class="required"> <label for="id_username">Username:</label>
