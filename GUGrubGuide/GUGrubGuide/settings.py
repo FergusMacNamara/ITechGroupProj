@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'gugrub',
     'registration',
     'bootstrap_toolkit',
-    'ratings',
+
 )
 
 MIDDLEWARE_CLASSES = (

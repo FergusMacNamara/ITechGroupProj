@@ -32,7 +32,7 @@ a{
   display         : block;
   float           : right;
   position        : relative;
-  background      : url('/static/images/star-off.svg');
+  background      : url('/static/images/star-off1.svg');
   background-size : contain;
 }
 
@@ -41,10 +41,13 @@ a{
   display         : block;
   width           : 1.5em;
   height          : 1.5em;
-  background      : url('/static/images/star-on.svg');
+
+
   background-size : contain;
   opacity         : 0;
   transition      : opacity 0.2s linear;
+ background      : url('/static/images/star-on1.svg');
+
 }
 
 .starRating:not(old) > label:hover:before,

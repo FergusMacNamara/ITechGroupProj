@@ -8,18 +8,87 @@
     <div class="page-header">
         <h1>{{ eatery.name }}</h1>
         <img src="{{MEDIA_URL}}{{eatery.picture}}"/>
-        <p>{{eatery.averageQualityRating}}
-        {{eatery.averageValueRating}}
-        {{eatery.averageAtmosphereRating}}
-        {{eatery.averageServiceRating}}
-        {{eatery.averageRecommendRating}}</p>
+       </br></br> <p>Quality Rating: {{eatery.averageQualityRating}}
+            <span class="starRating">
+            <input id="id_qualityRating_5" type="radio" name="qrating" value="5">
+            <label for="id_qualityRating_5">5</label>
+            <input id="id_qualityRating_4" type="radio" name="qrating" value="4">
+            <label for="id_qualityRating_4">4</label>
+            <input id="id_qualityRating_3" type="radio" name="qrating" value="3">
+            <label for="id_qualityRating_3">3</label>
+            <input id="id_qualityRating_2" type="radio" name="qrating" value="2">
+            <label for="id_qualityRating_2">2</label>
+            <input id="id_qualityRating_1" type="radio" name="qrating" value="1">
+            <label for="id_qualityRating_1">1</label>
+            </span>
+</br>
+
+        Value Rating: {{eatery.averageValueRating}}
+             <span class="starRating">
+            <input id="id_valueRating_5" type="radio" name="vrating" value="5">
+            <label for="id_valueRating_5">5</label>
+            <input id="id_valueRating_4" type="radio" name="vrating" value="4">
+            <label for="id_valueRating_4">4</label>
+            <input id="id_valueRating_3" type="radio" name="vrating" value="3">
+            <label for="id_valueRating_3">3</label>
+            <input id="id_valueRating_2" type="radio" name="vrating" value="2">
+            <label for="id_valueRating_2">2</label>
+            <input id="id_valueRating_1" type="radio" name="vrating" value="1">
+            <label for="id_valueRating_1">1</label>
+            </span></br>
+        Atmosphere Rating: {{eatery.averageAtmosphereRating}}
+               <span class="starRating">
+            <input id="id_atmosphereRating_5" type="radio" name="arating" value="5">
+            <label for="id_atmosphereRating_5">5</label>
+            <input id="id_atmosphereRating_4" type="radio" name="arating" value="4">
+            <label for="id_atmosphereRating_4">4</label>
+            <input id="id_atmosphereRating_3" type="radio" name="arating" value="3">
+            <label for="id_atmosphereRating_3">3</label>
+            <input id="id_atmosphereRating_2" type="radio" name="arating" value="2">
+            <label for="id_atmosphereRating_2">2</label>
+            <input id="id_atmosphereRating_1" type="radio" name="arating" value="1">
+            <label for="id_atmosphereRating_1">1</label>
+            </span>
+        </br>
+        Service Rating: {{eatery.averageServiceRating}}
+             <span class="starRating">
+            <input id="id_serviceRating_5" type="radio" name="srating" value="5">
+            <label for="id_serviceRating_5">5</label>
+            <input id="id_serviceRating_4" type="radio" name="srating" value="4">
+            <label for="id_serviceRating_4">4</label>
+            <input id="id_serviceRating_3" type="radio" name="srating" value="3">
+            <label for="id_serviceRating_3">3</label>
+            <input id="id_serviceRating_2" type="radio" name="srating" value="2">
+            <label for="id_serviceRating_2">2</label>
+            <input id="id_serviceRating_1" type="radio" name="srating" value="1">
+            <label for="id_serviceRating_1">1</label>
+            </span>
+        </br>
+        Recommend Rating: {{eatery.averageRecommendRating}}
+          <span class="starRating">
+            <input id="id_recommendRating_5" type="radio" name="rrating" value="5">
+            <label for="id_recommendRating_5">5</label>
+            <input id="id_recommendRating_4" type="radio" name="rrating" value="4">
+            <label for="id_recommendRating_4">4</label>
+            <input id="id_recommendRating_3" type="radio" name="rrating" value="3">
+            <label for="id_recommendRating_3">3</label>
+            <input id="id_recommendRating_2" type="radio" name="rrating" value="2">
+            <label for="id_recommendRating_2">2</label>
+            <input id="id_recommendRating_1" type="radio" name="rrating" value="1">
+            <label for="id_recommendRating_1">1</label>
+            </span>
+
+    </p>
     </div>
         <p>{{ avgQ }} </p>
         {% if eatery %}
             {% if reviews %}
             <ul>
                 {% for review in reviews %}
-                <li>{{ review.title }}</a></li>
+                <li><b>Title: </b>{{ review.title }}  </br>Latest updated:
+                    {{review.date}}</br>
+                    <img src="{{MEDIA_URL}}"{{review.picture}}/></a></li></br>
+                Comment:{{review.description}}</br><b> Post by: {{review.reviewer}}</b></br></br></br>
                 {% endfor %}
             </ul>
             {% else %}
@@ -31,21 +100,7 @@
         {% if user.is_authenticated %}
         <a href="{% url 'add_eatery_review' eatery.slug %}">Add a Review</a><br />
         {% endif %}
-<p>
-      Rating:
-      <span class="starRating">
-        <input id="rating5" type="radio" name="rating" value="5">
-        <label for="rating5">5</label>
-        <input id="rating4" type="radio" name="rating" value="4">
-        <label for="rating4">4</label>
-        <input id="rating3" type="radio" name="rating" value="3" checked>
-        <label for="rating3">3</label>
-        <input id="rating2" type="radio" name="rating" value="2">
-        <label for="rating2">2</label>
-        <input id="rating1" type="radio" name="rating" value="1">
-        <label for="rating1">1</label>
-      </span>
-    </p>
+
 
 {% endblock %}
 

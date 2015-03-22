@@ -131,16 +131,12 @@
             </p>
             {% endif %}
 
-
-
             {% if form.picture %}
             <p> picture{{form.picture}}</p>
             {% endif %}
             {% for field in form.visible_fields %}
                 {{ field.errors }}
 
-
-                </br>
                 </br>
             {% endfor %}
 
