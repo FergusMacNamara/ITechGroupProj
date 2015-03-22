@@ -54,5 +54,5 @@ a{
 }
 
 h1.hidden {
-    display: none;
+    display: block;
 }
