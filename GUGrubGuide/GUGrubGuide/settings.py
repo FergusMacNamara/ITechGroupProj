@@ -40,7 +40,6 @@ INSTALLED_APPS = (
     'gugrub',
     'registration',
     'bootstrap_toolkit',
-    'ratings',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -113,8 +112,3 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'gugrubguide@gmail.com'
 EMAIL_HOST_PASSWORD = 'grubguide'
 EMAIL_PORT = 587
-
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
-TEMPLATE_CONTEXT_PROCESSORS += (
-     'django.core.context_processors.request',
-)

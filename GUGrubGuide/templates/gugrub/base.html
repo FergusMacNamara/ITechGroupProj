@@ -11,7 +11,7 @@
     <title>GUGrubGuide - {% block title %}Rate the food at Glasgow U!{% endblock %}</title>
 
     <link href="/static/css/bootstrap.css" rel="stylesheet">
- <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
 
 <link href="/static/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
 <script src="/static/js/jquery.js"></script>
@@ -41,7 +41,8 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
             <ul class="nav navbar-nav">
                {% if user.is_authenticated %}
-                    <li class="active"><a href="/gugrub/add_new_review/">Add A New Review</a></li>
+                    <li class="navbar-text"> Hello {{ user.username }}!</li>
+                    <li><a href="/gugrub/add_new_review/">Add A New Review</a></li>
                     <li><a href="{% url 'auth_logout' %}?next=/gugrub/">Logout</a></li>
                 {% else %}
                     <li><a href="{% url 'registration_register' %}">Register Here</a></li>
