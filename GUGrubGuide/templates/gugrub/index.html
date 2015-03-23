@@ -22,16 +22,18 @@
     <div class="container">
         <ul id="myTab" class="nav nav-tabs" role="tablist">
             <li class="active" role="presentation">
-                <a id="tab-tab" aria-expanded="true" aria-controls="top" data-toggle="tab" role="tab" href="#top">Top
-                    Rated</a>
+                <a id="tab-tab" aria-expanded="true" aria-controls="top" data-toggle="tab" role="tab" href="#top">
+                    Top Rated
+                </a>
             </li>
             <li class="" role="presentation">
-                <a id="new-tab" aria-expanded="true" aria-controls="top" data-toggle="tab" role="tab" href="#new">Recently
-                    Added</a>
+                <a id="new-tab" aria-expanded="true" aria-controls="new" data-toggle="tab" role="tab" href="#new">
+                    Recently Added
+                </a>
             </li>
         </ul>
         <div id="myTabContent" class="tab-content">
-            <div id="top" class="tab-pane fade active in" aria-labelledby="top-tab" role="tabpanel">
+            <div id="top" class="tab-pane fade" aria-labelledby="top-tab" role="tabpanel">
                 {% if eateries_avg %}
                     <div>
                         {% for eatery in eateries_avg %}
