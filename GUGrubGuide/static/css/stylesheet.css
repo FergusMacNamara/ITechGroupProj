@@ -66,7 +66,7 @@ h1.hidden {
 span.stars, span.stars span {
     display: block;
     background: url(ReviewStarOn.png) 0 -32px repeat-x;
-    width:  160px;
+    width:  148px;
     height: 32px;
 }
 
@@ -302,8 +302,7 @@ fieldset[disabled] .btn-primary.active {
     border-color: #3E84C2;
 }
 
-.jumbotro {
-    background: #162e77;
+.jumbotron {
     color: #ffffff;
     background-attachment: fixed;
 }
@@ -321,9 +320,10 @@ fieldset[disabled] .btn-primary.active {
 
 section.slider{
     color: #ffffff;
-    background: #52AD81;
+    background: #0067bb;
     margin: 40px 0;
     padding: 40px 0;
+    border-radius: 40px;
 }
 
 section.slider h2{

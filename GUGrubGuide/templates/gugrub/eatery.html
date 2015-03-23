@@ -10,14 +10,16 @@
 
 <div class="jumbotron" id="home">
     <div class="container">
-        <div class="media">
+        <div>
             <a href="#" class="pull-right"><img class="media-object" src="{{MEDIA_URL}}{{eatery.picture}}"/></a>
 
             <div class="media-body">
                 <div class="col-md-11">
                     <h1 class="title"><span>{{eatery.name}}</span></h1>
 
-                    <a>{{eatery.description}}</a>
+                    <span class="stars">{{eatery.averageQualityRating}}</span>
+
+                    <p>{{eatery.description}}</p>
 
                     <p><a class="btn btn-success btn-lg" href="{% url 'add_eatery_review' eatery.slug %}">Add a Review<i class="icon icon-angle-right"></i></a></p>
                 </div>
@@ -34,18 +36,18 @@
                                 <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
                         </div>
                         <div class="feature-box">
-                                <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
+                                <h4 class="shorter">Average Value Rating: <span class="stars">{{eatery.averageVenueRating}}</span></h4>
                         </div>
                               <div class="feature-box">
-                                <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
+                                <h4 class="shorter">Average Atmosphere Rating: <span class="stars">{{eatery.averageAtmosphereRating}}</span></h4>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="feature-box">
-                                <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
+                                <h4 class="shorter">Average Service Rating: <span class="stars">{{eatery.averageServiceRating}}</span></h4>
                         </div>
                         <div class="feature-box">
-                                <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
+                                <h4 class="shorter">Average Recommend Rating: <span class="stars">{{eatery.averageRecommendRating}}</span></h4>
                         </div>
                     </div>
                     </div>
@@ -55,67 +57,88 @@
         </div>
     </div>
 </div>
-    <div class="page-header">
-        <h1>{{ eatery.name }}</h1>
-        <img src=/>
 
 
-        <p>Average Rating: <span class="stars">{{eatery.averageRating}}</span></p>
-        <p>
-        <p>Average Value Rating: <span class="stars">{{eatery.averageValueRating}}</span>
-        <p>Average Atmosphere Rating: <span class="stars">{{eatery.averageAtmosphereRating}}</span>
-        <p>Average Service Rating: <span class="stars">{{eatery.averageServiceRating}}</span>
-        <p>Average Recommend Rating: <span class="stars">{{eatery.averageRecommendRating}}</span>
 
-        {% if user.is_authenticated %}
-        <a href="{% url 'add_eatery_review' eatery.slug %}">Add a Review</a><br />
-        {% endif %}
-
-
-    <div class="container">
-                        {% if eatery %}
+</section>
+        {% if eatery %}
         {% if reviews %}
+        {% for review in reviews %}
+<section class="slider" id="features">
+    <div class="container">
+        <div class="row inner-page">
+            <h3 style="text-align: right">User: {{review.reviewer}}     Date: {{review.date}}</h3>
+            <div class="col-md-8 col-md-push-4 lazy-container loaded">
 
 
-        <div class="row pricing-table">
-            {% for review in reviews %}
-            <div class="col-md-4">
-                <div class="panel panel-info">
-                    <div class="panel-heading"><h3 class="text-center">{{ review.title }}</h3></div>
-                    <div align="center" class="panel-heading"><span class="stars">{{review.finalRating}}</span></div>
+            <h1 style="text-align: left"><strong>{{ review.title }}</strong></h1>
 
-                    <div class="panel-body text-center">
-                        <img class="img-responsive center-block" src="{{MEDIA_URL}}{{review.picture}}" alt="" style="height: 300px">
+            <h2 style="text-align: left">{{review.description}}</h2>
+            <h2><strong>Final Rating</strong><span class="stars">{{review.finalRating}}</span></h2>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="feature-box">
+
+                            <div class="feature-box-info">
+
+                                <h3 class="shorter">Quality Rating: <span class="stars">{{review.qualityRating}}</span></h3>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+
+                            <div class="feature-box-info">
+
+                                <h3 class="shorter">Value Rating: <span class="stars">{{review.valueRating}}</span></h3>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+
+                            <div class="feature-box-info">
+
+                                <h3 class="shorter">Atmosphere Rating: <span class="stars">{{review.atmosphereRating}}</span></h3>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush text-center">
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i> <p class="reviewtext">{{review.description}}</p></li>
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i><p class="reviewtext">{{review.date}}</p></li>
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i><p class="reviewtext">{{review.reviewer}}</p></li>
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i><p class="reviewtext">Final Rating: </p></li>
+                    <div class="col-md-6">
+                        <div class="feature-box">
 
-                    </ul>
-                    <div class="panel-footer">
-                        <a class="btn btn-lg btn-block btn-info"
-                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
-                            NOW!</a>
+                            <div class="feature-box-info">
+
+                                <h3 class="shorter">Service Rating: <span class="stars">{{review.recommendRating}}</span></h3>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+
+                            <div class="feature-box-info">
+
+                                <h3 class="shorter">Recommend Rating: <span class="stars">{{review.recommendRating}}</span></h3>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
             </div>
-            {% endfor %}
+            <div class="col-md-4 col-md-pull-8">
+                {% if review.picture %}
+                <a class="pull-right"><img  style="max-width:400px" style="max-height:100px" class="media-object" src="{{MEDIA_URL}}{{review.picture}}"/></a>
+                {% else %}
+                <a class="pull-right"><img  style="max-width:400px" style="max-height:100px" class="media-object" src="{{MEDIA_URL}}/cafe.png"/></a>
+                {% endif %}
+            </div>
         </div>
     </div>
-
-            {% else %}
+</section>
+                {% endfor %}
+                {% else %}
                 <strong>No reviews currently.</strong>
             {% endif %}
 
         {% else %}
             The specified eatery {{ eatery_name }} does not exist!
         {% endif %}
-
-</section>
-
 
 
  <script>
