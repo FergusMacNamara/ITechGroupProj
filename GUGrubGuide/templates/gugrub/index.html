@@ -15,27 +15,27 @@
         </div>
     </div>
 
-    <p>{{ avgQ }}</p>
-    <div class="container">
-        {%if eateries %}
-        <div>
-            {% for eatery in eateries %}
-            <div class="row">
-                <div class="col-md-4">
-                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }}</a><span class="stars">{{eatery.averageRating}}</span></h2>
-                  <img src="{{MEDIA_URL}}{{eatery.picture}}"/>
-                <pdesc>{{eatery.description}} </pdesc>
-                <p><a class="btn btn-default" href="/gugrub/eatery/{{ eatery.slug }}" role="button">See reviews for {{eatery.name}} &raquo;</a></p>
+     <p>{{ avgQ }}</p>
+        <div class="container">
+            {%if eateries %}
+                <div>
+                {% for eatery in eateries %}
+                    <div class="col-md-4">
+                        <div class="panel panel-info" style="height: 425px;">
+                            <div class="panel-heading"><a href="/gugrub/eatery/{{ eatery.slug }}"><paneltitle>{{ eatery.name }}</paneltitle></a><span class="stars">{{eatery.averageRating}}</span></h2></div>
+                                <div>
+                                    <img src="{{MEDIA_URL}}{{eatery.picture}}"  height="200" width="350"/>
+                                </div>
+                                <div><pdesc> {{eatery.description}} </pdesc></div>
+                                <p><a class="btn btn-default" href="/gugrub/eatery/{{ eatery.slug }}" role="button">See reviews for {{eatery.name}} &raquo;</a></p>
+                        </div>
+                    </div>
+                {% endfor %}
                 </div>
-                
-            </div>
-			
-            {% endfor %}
-        {% else %}
-            <strong>There are no eateries present.</strong>
-        {% endif %}
+            {% else %}
+                <strong>There are no eateries present.</strong>
+            {% endif %}
         </div>
-    </div>
  <script>
 $(function() {
     $('span.stars').stars();
