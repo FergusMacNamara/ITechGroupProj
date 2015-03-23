@@ -38,6 +38,7 @@ def eatery(request, eatery_name_slug):
         eatery.averageAtmosphereRating = reviews.aggregate(Avg('atmosphereRating')).get('atmosphereRating__avg', 0.00)
         eatery.averageServiceRating = reviews.aggregate(Avg('serviceRating')).get('serviceRating__avg', 0.00)
         eatery.averageRecommendRating = reviews.aggregate(Avg('recommendRating')).get('recommendRating__avg', 0.00)
+        eatery.averageRating = reviews.aggregate(Avg('finalRating')).get('finalRating__avg')
 
         context_dict['reviews'] = reviews
 

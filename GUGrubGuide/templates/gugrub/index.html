@@ -6,20 +6,11 @@
 
 {% block body_block %}
 
-    {% if user.is_authenticated %}
-    <div class="page-header">
-         <h1>Hello {{ user.username }}!</h1>
-    </div>
-    </br>
-    <a href="/gugrub/add_new_review/">New Review</a><br />
-    {% endif %}
-
-
     <div class="jumbotron">
         <div class="container">
             <img src="{% static "images/logo.png" %}" alt="GUGrubGuide Logo" />
             <h1>Welcome!</h1>
-            <p>The Glasgow Univeristy Grub Guide allows you to rate your (least) favourite cafes, resturants and coffee shops on  the glasgow
+            <p>The Glasgow Univeristy Grub Guide allows you to rate your (least) favourite cafes, resturants and coffee shops on  the Glasgow
             University campus.</p>
         </div>
     </div>
@@ -31,28 +22,23 @@
             {% for eatery in eateries %}
             <div class="row">
                 <div class="col-md-4">
-                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
-                  <!--<img src="{{MEDIA_URL}}{{eatery.picture}}"/>-->
-                <p>Preview goes here. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }}</a><span class="stars">{{eatery.averageRating}}</span></h2>
+                  <img src="{{MEDIA_URL}}{{eatery.picture}}"/>
+                <pdesc>{{eatery.description}} </pdesc>
+                <p><a class="btn btn-default" href="/gugrub/eatery/{{ eatery.slug }}" role="button">See reviews for {{eatery.name}} &raquo;</a></p>
                 </div>
-                <div class="col-md-4">
-                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
-                <p>Preview goes here. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-md-4">
-                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
-                <p>Preview goes here. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div>
-
+                
             </div>
+			
             {% endfor %}
         {% else %}
             <strong>There are no eateries present.</strong>
         {% endif %}
         </div>
     </div>
-
+ <script>
+$(function() {
+    $('span.stars').stars();
+});
+</script>
 {% endblock %}
