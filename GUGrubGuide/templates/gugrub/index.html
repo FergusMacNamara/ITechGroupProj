@@ -25,24 +25,10 @@
                 <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
                   <img src="{{MEDIA_URL}}{{eatery.picture}}"/>
                 <p>{{eatery.description}} </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="/gugrub/eatery/{{ eatery.slug }}" role="button">View details &raquo;</a></p>
                 </div>
-                <!--<div class="col-md-4">
-                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
-                <p>Preview goes here. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-md-4">
-                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
-                <p>Preview goes here. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div> -->
-
+                
             </div>
-	
-			
-			
-			
 			
             {% endfor %}
         {% else %}
