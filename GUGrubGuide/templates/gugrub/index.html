@@ -22,7 +22,7 @@
             {% for eatery in eateries %}
             <div class="row">
                 <div class="col-md-4">
-                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }} {{eatery.averageRating}}</a></h2>
+                <h2><a href="/gugrub/eatery/{{ eatery.slug }}">{{ eatery.name }}</a><span class="stars">{{eatery.averageRating}}</span></h2>
                   <img src="{{MEDIA_URL}}{{eatery.picture}}"/>
                 <pdesc>{{eatery.description}} </pdesc>
                 <p><a class="btn btn-default" href="/gugrub/eatery/{{ eatery.slug }}" role="button">See reviews for {{eatery.name}} &raquo;</a></p>
@@ -36,5 +36,9 @@
         {% endif %}
         </div>
     </div>
-
+ <script>
+$(function() {
+    $('span.stars').stars();
+});
+</script>
 {% endblock %}

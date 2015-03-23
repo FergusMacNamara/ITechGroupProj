@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2843e4b8-d302-4a5e-9222-5985312a7474" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUGrubGuide/gugrub/views.py" afterPath="$PROJECT_DIR$/GUGrubGuide/gugrub/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/index.html" afterPath="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ITechGroupProj.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,18 +51,18 @@
       <file leaf-file-name="eatery.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUGrubGuide/templates/gugrub/eatery.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="1615">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state vertical-scroll-proportion="-16.961538" vertical-offset="936" max-vertical-offset="1615">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="85" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUGrubGuide/templates/gugrub/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.61538464" vertical-offset="86" max-vertical-offset="765">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.92488956" vertical-offset="86" max-vertical-offset="833">
+              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -109,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUGrubGuide/gugrub/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6751773" vertical-offset="102" max-vertical-offset="1734">
-              <caret line="40" column="92" selection-start-line="40" selection-start-column="92" selection-end-line="40" selection-end-column="92" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1734">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -151,7 +152,6 @@
         <option value="$PROJECT_DIR$/GUGrubGuide/gugrub/models.py" />
         <option value="$PROJECT_DIR$/GUGrubGuide/GUGrubGuide/urls.py" />
         <option value="$PROJECT_DIR$/GUGrubGuide/GUGrubGuide/settings.py" />
-        <option value="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/index.html" />
         <option value="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/base.html" />
         <option value="$PROJECT_DIR$/GUGrubGuide/static/css/star-on.svg" />
         <option value="$PROJECT_DIR$/GUGrubGuide/static/css/bootstrap.css" />
@@ -159,6 +159,7 @@
         <option value="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/eatery.html" />
         <option value="$PROJECT_DIR$/GUGrubGuide/static/css/stylesheet.css" />
         <option value="$PROJECT_DIR$/GUGrubGuide/gugrub/views.py" />
+        <option value="$PROJECT_DIR$/GUGrubGuide/templates/gugrub/index.html" />
       </list>
     </option>
   </component>
@@ -1013,26 +1014,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUGrubGuide/templates/gugrub/index.html">
+    <entry file="file://$PROJECT_DIR$/GUGrubGuide/gugrub/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.61538464" vertical-offset="86" max-vertical-offset="765">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1734">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUGrubGuide/templates/gugrub/eatery.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="1615">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state vertical-scroll-proportion="-16.961538" vertical-offset="936" max-vertical-offset="1615">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="85" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUGrubGuide/gugrub/views.py">
+    <entry file="file://$PROJECT_DIR$/GUGrubGuide/templates/gugrub/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6751773" vertical-offset="102" max-vertical-offset="1734">
-          <caret line="40" column="92" selection-start-line="40" selection-start-column="92" selection-end-line="40" selection-end-column="92" />
+        <state vertical-scroll-proportion="0.92488956" vertical-offset="86" max-vertical-offset="833">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
           <folding />
         </state>
       </provider>
