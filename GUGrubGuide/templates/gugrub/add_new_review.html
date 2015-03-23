@@ -19,20 +19,20 @@
                 <!--<div class="starRating">-->
         <h1>Start your review</h1>
     <!--</div>-->
-<div class="jumbotron" id="frame">
+<div class="jumbotron" id="frame" >
             {% if form.eatery %}
-            <p> Choose an eatery </p>
+            <h3> Choose an eatery </h3>
             {{form.eatery}}
             {% endif %}
 
 
             {% if form.title %}
-            <p>Subject </p>
+            <h3>Subject </h3>
             {{form.title}}
             {% endif %}
 
             {% if form.description %}
-            <p> Description </p>
+            <h3> Description </h3>
                 {{form.description}}
             {% endif %}
 
@@ -139,11 +139,12 @@
 
 
             {% if form.picture %}
-            <p> Add a Picture To Your Review </p>
+            <h3> Add a Picture To Your Review </h3>
+            <br>
                 {{form.picture}}
             {% endif %}
-
-            <input type="submit" name="submit" value="Submit Review" />
+            <br>
+            <button type="submit" class="btn btn-default" style="background-color: black; color:white; ">Submit Review</button>
         </div></form>
 
     <script>
