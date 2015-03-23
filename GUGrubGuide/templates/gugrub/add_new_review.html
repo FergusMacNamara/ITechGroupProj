@@ -4,11 +4,8 @@
 
 {% block title %}New Review{% endblock %}
 
-{% block body_block %}<img src="/static/images/header.jpg" style="width: 100%"/>
-    <div class="page-header">
-
-        <h1>Add a Review</h1>
-    </div>
+{% block body_block %}
+    <img src="/static/images/header.png" style="width: 100%"/>
         <form id="review_form" method="post" action="/gugrub/add_new_review/" enctype="multipart/form-data">
 
             {% csrf_token %}
@@ -17,10 +14,10 @@
             {% endfor %}
 
                 <!--<div class="starRating">-->
-        <h1>Start your review</h1>
+
     <!--</div>-->
 <div class="jumbotron" id="frame" >
-		
+		<h1>Start your review</h1>
             {% if form.eatery %}
     
 	<h3> Choose an eatery </h3>
@@ -41,7 +38,7 @@
             <h3> Description </h3>
 			<eatForm>
                 {{form.description}}
-    <\eatForm>
+            </eatForm>
 	{% endif %}
     
             {% if form.qualityRating %}

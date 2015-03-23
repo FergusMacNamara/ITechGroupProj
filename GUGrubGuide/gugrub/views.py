@@ -11,14 +11,21 @@ def index(request):
 
     context_dict = {}
 
-    eatery_list = Eatery.objects.order_by('averageRating')
+    eatery_listAvg = Eatery.objects.order_by('averageRating')[:5]
 
-    for eatery in eatery_list:
+    for eatery in eatery_listAvg:
+        reviews = Review.objects.filter(eatery=eatery)
+        eatery.averageRating = reviews.aggregate(Avg('finalRating')).get('finalRating__avg')
+
+    eatery_listNew = Eatery.objects.order_by('-id')[:5]
+
+    for eatery in eatery_listNew:
         reviews = Review.objects.filter(eatery=eatery)
         eatery.averageRating = reviews.aggregate(Avg('finalRating')).get('finalRating__avg')
 
 
-    context_dict['eateries'] = eatery_list
+    context_dict['eateries_avg'] = eatery_listAvg
+    context_dict['eateries_new'] = eatery_listNew
 
     # Render the response and send it back!
     return render(request, 'gugrub/index.html', context_dict)
