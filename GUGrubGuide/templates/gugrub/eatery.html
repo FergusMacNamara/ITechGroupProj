@@ -18,10 +18,55 @@
         <p>Average Service Rating: <span class="stars">{{eatery.averageServiceRating}}</span>
         <p>Average Recommend Rating: <span class="stars">{{eatery.averageRecommendRating}}</span>
 
+        {% if user.is_authenticated %}
+        <a href="{% url 'add_eatery_review' eatery.slug %}">Add a Review</a><br />
+        {% endif %}
 
-                {% if eatery %}
+
+    <div class="container">
+                        {% if eatery %}
         {% if reviews %}
-{% for review in reviews %}
+
+
+        <div class="row pricing-table">
+            {% for review in reviews %}
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><h3 class="text-center">{{ review.title }}</h3></div>
+                    <div align="center" class="panel-heading"><span class="stars">{{review.finalRating}}</span></div>
+
+                    <div class="panel-body text-center">
+                        <img class="img-responsive" src="{{MEDIA_URL}}{{review.picture}}" alt="">
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> <p class="reviewtext">{{review.description}}</p></li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i><p class="reviewtext">{{review.date}}</p></li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i><p class="reviewtext">{{review.reviewer}}</p></li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i><p class="reviewtext">Final Rating: </p></li>
+
+                    </ul>
+                    <div class="panel-footer">
+                        <a class="btn btn-lg btn-block btn-info"
+                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                            NOW!</a>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+            {% else %}
+                <strong>No reviews currently.</strong>
+            {% endif %}
+
+        {% else %}
+            The specified eatery {{ eatery_name }} does not exist!
+        {% endif %}
+
+</section>
+
     </div>
         <div class="row">
             <div class="col-md-7">
@@ -30,7 +75,7 @@
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>{{ review.title }}</h3>
+                <h3></h3>
                 <p>{{review.description}}</p>
                 <p>{{review.date}}</p>
                 <p>{{review.reviewer}}</p>
@@ -43,41 +88,7 @@
             </div>
         </div>
         <hr>
- {% endfor %}
-            {% else %}
-                <strong>No reviews currently.</strong>
-            {% endif %}
 
-
-
-        {% else %}
-            The specified eatery {{ eatery_name }} does not exist!
-        {% endif %}
-
-
-
-
-
-
-
-        {% if user.is_authenticated %}
-        <a href="{% url 'add_eatery_review' eatery.slug %}">Add a Review</a><br />
-        {% endif %}
-<p>
-      Rating:
-      <span class="starRating">
-        <input id="rating5" type="radio" name="rating" value="5">
-        <label for="rating5">5</label>
-        <input id="rating4" type="radio" name="rating" value="4">
-        <label for="rating4">4</label>
-        <input id="rating3" type="radio" name="rating" value="3" checked>
-        <label for="rating3">3</label>
-        <input id="rating2" type="radio" name="rating" value="2">
-        <label for="rating2">2</label>
-        <input id="rating1" type="radio" name="rating" value="1">
-        <label for="rating1">1</label>
-      </span>
-    </p>
 
  <script>
 $(function() {
