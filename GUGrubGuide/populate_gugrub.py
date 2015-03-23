@@ -67,90 +67,12 @@ def populate():
                     lname="MacNamara")
 
 
-    add_review(eatery=cafe_picolino,
-                rvr= user,
-                title="Boyd Orr Cafe",
-                desc="Review text here",
-                qualR=4,
-                valR=2,
-                atmosR=3,
-                servR=4,
-                recR=3)
 
-    add_review(eatery=cafe_postgrad,
-                rvr= user,
-                title="Gilbert Scott Building [A26]",
-                desc="Review text here",
-                qualR=4,
-                valR=2,
-                atmosR=3,
-                servR=4,
-                recR=3)
-
-    add_review(eatery=cafe_forthought,
-                rvr= user,
-                title="The Fraser Building, level 3[E2]",
-                desc="Review text here",
-                qualR=4,
-                valR=2,
-                atmosR=3,
-                servR=4,
-                recR=3)
-
-    add_review(eatery=cafe_togo,
-                rvr= user,
-                title="The Fraser Building, level 3[E2]",
-                desc="Review text here",
-                qualR=4,
-                valR=2,
-                atmosR=3,
-                servR=4,
-                recR=3)
-
-    add_review(eatery=cafe_thesquare,
-                rvr= user,
-                title="The Fraser Building, level 3[E2]",
-                desc="Review text here",
-                qualR=4,
-                valR=2,
-                atmosR=3,
-                servR=4,
-                recR=3)
-
-    add_review(eatery=cafe_atrium,
-                rvr= user,
-                title="Wolfson Medical School Building[C8]",
-                desc="Review text here",
-                qualR=4,
-                valR=2,
-                atmosR=3,
-                servR=4,
-                recR=3)
-
-    add_review(eatery=cafe_standrews,
-                rvr= user,
-                title="STAC [E14]",
-                desc="Review text here",
-                qualR=4,
-                valR=2,
-                atmosR=3,
-                servR=4,
-                recR=3)
-
-    add_review(eatery=cafe_links,
-                rvr= user,
-                title="off the Courtyard, Wolfson Building[B10]",
-                desc="Review text here",
-                qualR=4,
-                valR=2,
-                atmosR=3,
-                servR=4,
-                recR=3)
 
     add_review(eatery=garscube_campus,
                 rvr= user,
                 title="School of Veterinary Medicine",
-                desc="Review text here",
+                desc="Delicious food, but a little pricey.",
                 qualR=4,
                 valR=2,
                 atmosR=3,
@@ -160,14 +82,32 @@ def populate():
     add_review(eatery=cafe_focus,
                 rvr= user,
                 title="Level 3, University Library [D11]",
-                desc="Review text here",
-                qualR=4,
-                valR=2,
+                desc="Great for a quick coffee when you're studying.",
+                qualR=5,
+                valR=4,
                 atmosR=3,
-                servR=4,
+                servR=5,
                 recR=3)
 
+    add_review(eatery=cafe_focus,
+                rvr= user,
+                title="Level 3, University Library [D11]d",
+                desc="Great for a quick coffee when you're studying.",
+                qualR=5,
+                valR=4,
+                atmosR=3,
+                servR=5,
+                recR=3)
 
+    add_review(eatery=cafe_focus,
+                rvr= user,
+                title="Level 3, University Library [D11]d",
+                desc="Great for a quick coffee when you're studying.",
+                qualR=5,
+                valR=4,
+                atmosR=3,
+                servR=5,
+                recR=3)
 
 
 
