@@ -1,18 +1,67 @@
 {% extends 'gugrub/base.html' %}
 
-{% load staticfiles %}
+
 
 
 {% block title %}{{eatery_name}}{% endblock %}
 
 {% block body_block %}
+
+
+<div class="jumbotron" id="home">
+    <div class="container">
+        <div class="media">
+            <a href="#" class="pull-right"><img class="media-object" src="{{MEDIA_URL}}{{eatery.picture}}"/></a>
+
+            <div class="media-body">
+                <div class="col-md-11">
+                    <h1 class="title"><span>{{eatery.name}}</span></h1>
+
+                    <a>{{eatery.description}}</a>
+
+                    <p><a class="btn btn-success btn-lg" href="{% url 'add_eatery_review' eatery.slug %}">Add a Review<i class="icon icon-angle-right"></i></a></p>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-push-4 lazy-container loaded">
+                <!--<img data-original="images/mockup.png" src="images/mockup.png" alt="Looks great on every device"-->
+                <!--class="lazy">-->
+
+                <h2>Current<strong>Ratings</strong></h2>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                                <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
+                        </div>
+                        <div class="feature-box">
+                                <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
+                        </div>
+                              <div class="feature-box">
+                                <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                                <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
+                        </div>
+                        <div class="feature-box">
+                                <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
     <div class="page-header">
         <h1>{{ eatery.name }}</h1>
-        <img src="{{MEDIA_URL}}{{eatery.picture}}"/>
+        <img src=/>
 
 
         <p>Average Rating: <span class="stars">{{eatery.averageRating}}</span></p>
-        <p>Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span>
+        <p>
         <p>Average Value Rating: <span class="stars">{{eatery.averageValueRating}}</span>
         <p>Average Atmosphere Rating: <span class="stars">{{eatery.averageAtmosphereRating}}</span>
         <p>Average Service Rating: <span class="stars">{{eatery.averageServiceRating}}</span>
@@ -36,7 +85,7 @@
                     <div align="center" class="panel-heading"><span class="stars">{{review.finalRating}}</span></div>
 
                     <div class="panel-body text-center">
-                        <img class="img-responsive" src="{{MEDIA_URL}}{{review.picture}}" alt="">
+                        <img class="img-responsive center-block" src="{{MEDIA_URL}}{{review.picture}}" alt="" style="height: 300px">
                     </div>
                     <ul class="list-group list-group-flush text-center">
                         <li class="list-group-item"><i class="icon-ok text-danger"></i> <p class="reviewtext">{{review.description}}</p></li>
@@ -67,27 +116,6 @@
 
 </section>
 
-    </div>
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="{{MEDIA_URL}}{{review.picture}}" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3></h3>
-                <p>{{review.description}}</p>
-                <p>{{review.date}}</p>
-                <p>{{review.reviewer}}</p>
-                <p>Final Rating: {{review.finalRating}} </p>
-                <p>Quality Rating: {{review.finalRating}}</p>
-                <p>Value Rating: {{review.valueRating}}</p>
-                <p>Atmosphere Rating: {{review.atmosphereRating}}</p>
-                <p>Service Rating: {{review.serviceRating}}</p>
-                <p>Recommend Rating: {{review.recommendRating}}</p>
-            </div>
-        </div>
-        <hr>
 
 
  <script>

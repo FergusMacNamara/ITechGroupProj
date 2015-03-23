@@ -60,9 +60,9 @@ h1.hidden {
 }
 span.stars, span.stars span {
     display: block;
-    background: url(stary.png) 0 -16px repeat-x;
-    width:  80px;
-    height: 16px;
+    background: url(ReviewStarOn.png) 0 -32px repeat-x;
+    width:  160px;
+    height: 32px;
 }
 
 span.stars span {
@@ -298,7 +298,6 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .jumbotron{
-    background: url(images/intro-bg.jpg);
     color: #ffffff;
     background-attachment: fixed;
 }
