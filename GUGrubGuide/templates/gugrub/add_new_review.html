@@ -20,23 +20,30 @@
         <h1>Start your review</h1>
     <!--</div>-->
 <div class="jumbotron" id="frame" >
-	<eatForm>	
+		
             {% if form.eatery %}
-            <h3> Choose an eatery </h3>
-            {{form.eatery}}
+    
+	<h3> Choose an eatery </h3>
+    <eatForm>
+	{{form.eatery}}
+	</eatForm>
             {% endif %}
 
 
             {% if form.title %}
             <h3>Subject </h3>
+			<eatForm>
             {{form.title}}
+			</eatForm>
             {% endif %}
 
             {% if form.description %}
             <h3> Description </h3>
+			<eatForm>
                 {{form.description}}
-            {% endif %}
-    </eatForm>
+    <\eatForm>
+	{% endif %}
+    
             {% if form.qualityRating %}
                 <div class="hidden">{{form.qualityRating}}</div>
 

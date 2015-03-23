@@ -18,17 +18,19 @@
             {% endfor %}
 <h1>Start your review</h1>
              <div class="jumbotron" id="frame">
-
+			<eatForm>
 
             {% if form.title %}
             <p>Subject </p>
             {{form.title}}
             {% endif %}
-
+			
             {% if form.description %}
             <p> Description </p>
                 {{form.description}}
-            {% endif %}
+            
+			</eatForm>
+			{% endif %}
 
             {% if form.qualityRating %}
                 <div class="hidden">{{form.qualityRating}}</div>
