@@ -20,19 +20,21 @@
         <h1>Start your review</h1>
     <!--</div>-->
 <div class="jumbotron" id="frame">
+
+
             {% if form.eatery %}
-            <p> Choose an eatery </p>
+            <h3>Choose an eatery </h3>
             {{form.eatery}}
             {% endif %}
 
 
             {% if form.title %}
-            <p>Subject </p>
+            <h3>Subject </h3>
             {{form.title}}
             {% endif %}
 
             {% if form.description %}
-            <p> Description </p>
+            <h3>Description</h3>
                 {{form.description}}
             {% endif %}
 
@@ -139,14 +141,20 @@
 
 
             {% if form.picture %}
+
             <p> Add a Picture To Your Review </p>
                 {{form.picture}}
             {% endif %}
 
-            <input type="submit" name="submit" value="Submit Review" />
-        </div></form>
+            <br>
+            <button type="submit" class="btn btn-default" style="background-color:#000000; color:white;">Submit Review</button>
+        </div>
+        </form>
 
-    <script>
+
+
+
+<script>
         jQuery.expr[':'].regex = function(elem, index, match) {
         var matchParams = match[3].split(','), validLabels = /^(data|css):/,
             attr = {
