@@ -33,7 +33,7 @@
             {% endif %}
 
             {% if form.qualityRating %}
-               <h1 class="hidden">{{form.qualityRating}}</h1>
+                <div class="hidden">{{form.qualityRating}}</div>
 
             <p>
             "How would you rate the quality of the food/drink?"
@@ -50,10 +50,11 @@
             <label for="id_qualityRating_0">1</label>
             </span>
             </p>
+
             {% endif %}
 
             {% if form.valueRating %}
-                <h1>{{form.valueRating}}</h1>
+                <div class="hidden">{{form.valueRating}}</div>
 
             <p>
             "How would you rate the quality of the food/drink?"
@@ -73,7 +74,7 @@
             {% endif %}
 
             {% if form.atmosphereRating %}
-                <h1>{{form.atmosphereRating}}</h1>
+                <div class="hidden">{{form.atmosphereRating}}</div>
 
             <p>
             "How would you rate the quality of the food/drink?"
@@ -93,7 +94,7 @@
             {% endif %}
 
             {% if form.serviceRating %}
-                <h1>{{form.serviceRating}}</h1>
+                <div class="hidden">{{form.serviceRating}}</div>
 
 
             "How would you rate the quality of the food/drink?"
@@ -113,7 +114,7 @@
             {% endif %}
 
             {% if form.recommendRating %}
-                <h1>{{form.recommendRating}}</h1>
+                <div class="hidden">{{form.recommendRating}}</div>
             <p>
             "How would you rate the quality of the food/drink?"
                 <span class="starRating">
@@ -139,6 +140,26 @@
 
             <input type="submit" name="submit" value="Submit Review" />
         </form>
+    <script>
+        jQuery.expr[':'].regex = function(elem, index, match) {
+        var matchParams = match[3].split(','), validLabels = /^(data|css):/,
+            attr = {
+                method: matchParams[0].match(validLabels) ?
+                            matchParams[0].split(':')[0] : 'attr',
+                property: matchParams.shift().replace(validLabels,'')
+            },
+            regexFlags = 'ig',
+            regex = new RegExp(matchParams.join('').replace(/^s+|s+$/g,''), regexFlags);
+            return regex.test(jQuery(elem)[attr.method](attr.property));
+        };
 
+        $(':regex(id,.*Rating_.*)').click(function(){
+          var tmp = "";
+          tmp += "input[id=\"";
+          tmp += $(this).attr('id');
+          tmp += "\"]";
+          $(tmp).prop('checked',true);
+        });
+    </script>
 {% endblock %}
 

@@ -12,7 +12,7 @@ from django.forms.extras.widgets import SelectDateWidget
 
 class EateryReviewForm(forms.ModelForm):
 
-    CHOICES = (('1', 'One'), ('2', 'Two'),('3', 'Three'),('4', 'Four'),('5', 'Five'))
+    CHOICES = (('1', '1'), ('2', '2'),('3', '3'),('4', '4'),('5', '5'))
     date = forms.DateTimeInput
     title = forms.CharField(max_length=256, help_text="Please enter a title for your review.")
     description = forms.CharField(widget = forms.Textarea, help_text="Please describe your experience.")
