@@ -11,13 +11,13 @@ def index(request):
 
     context_dict = {}
 
-    eatery_listAvg = Eatery.objects.order_by('averageRating')[:5]
+    eatery_listAvg = Eatery.objects.order_by('averageRating')[:6]
 
     for eatery in eatery_listAvg:
         reviews = Review.objects.filter(eatery=eatery)
         eatery.averageRating = reviews.aggregate(Avg('finalRating')).get('finalRating__avg')
 
-    eatery_listNew = Eatery.objects.order_by('-id')[:5]
+    eatery_listNew = Eatery.objects.order_by('-id')[:6]
 
     for eatery in eatery_listNew:
         reviews = Review.objects.filter(eatery=eatery)
