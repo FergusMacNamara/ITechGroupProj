@@ -4,8 +4,9 @@
 
 {% block title %}New Review{% endblock %}
 
-{% block body_block %}
+{% block body_block %}<img src="/static/images/header.jpg" style="width: 100%"/>
     <div class="page-header">
+
         <h1>Add a Review</h1>
     </div>
         <form id="review_form" method="post" action="/gugrub/add_new_review/" enctype="multipart/form-data">
@@ -16,20 +17,23 @@
             {% endfor %}
 
                 <!--<div class="starRating">-->
-        <h1>add review</h1>
+        <h1>Start your review</h1>
     <!--</div>-->
-
+<div class="jumbotron" id="frame">
             {% if form.eatery %}
-            <p> eatery {{form.eatery}}</p>
+            <p> Choose an eatery </p>
+            {{form.eatery}}
             {% endif %}
 
 
             {% if form.title %}
-            <p> title{{form.title}}</p>
+            <p>Subject </p>
+            {{form.title}}
             {% endif %}
 
             {% if form.description %}
-            <p> description{{form.description}}</p>
+            <p> Description </p>
+                {{form.description}}
             {% endif %}
 
             {% if form.qualityRating %}
@@ -57,7 +61,7 @@
                 <div class="hidden">{{form.valueRating}}</div>
 
             <p>
-            "How would you rate the quality of the food/drink?"
+            "How would you rate the value of the food/drink?"
                 <span class="starRating">
             <input id="id_valueRating_4" type="radio" name="vrating" value="5">
             <label for="id_valueRating_4">5</label>
@@ -77,7 +81,7 @@
                 <div class="hidden">{{form.atmosphereRating}}</div>
 
             <p>
-            "How would you rate the quality of the food/drink?"
+            "How would you rate the atmosphere?"
                   <span class="starRating">
             <input id="id_atmosphereRating_4" type="radio" name="arating" value="5">
             <label for="id_atmosphereRating_4">5</label>
@@ -96,9 +100,9 @@
             {% if form.serviceRating %}
                 <div class="hidden">{{form.serviceRating}}</div>
 
-
-            "How would you rate the quality of the food/drink?"
-                <span class="starRating">
+            <p>
+            "How would you rate the service?"
+             <span class="starRating">
             <input id="id_serviceRating_4" type="radio" name="srating" value="5">
             <label for="id_serviceRating_4">5</label>
             <input id="id_serviceRating_3" type="radio" name="srating" value="4">
@@ -116,7 +120,7 @@
             {% if form.recommendRating %}
                 <div class="hidden">{{form.recommendRating}}</div>
             <p>
-            "How would you rate the quality of the food/drink?"
+            "How likely are you to recommend it to another student?"
                 <span class="starRating">
             <input id="id_recommendRating_4" type="radio" name="rrating" value="5">
             <label for="id_recommendRating_4">5</label>
@@ -135,11 +139,13 @@
 
 
             {% if form.picture %}
-            <p> picture{{form.picture}}</p>
+            <p> Add a Picture To Your Review </p>
+                {{form.picture}}
             {% endif %}
 
             <input type="submit" name="submit" value="Submit Review" />
-        </form>
+        </div></form>
+
     <script>
         jQuery.expr[':'].regex = function(elem, index, match) {
         var matchParams = match[3].split(','), validLabels = /^(data|css):/,
@@ -160,6 +166,8 @@
           tmp += "\"]";
           $(tmp).prop('checked',true);
         });
+        $('#id_description').attr("placeholder", "Please describe your experience.");
+        $('#frame').attr('border-radius', '10% 5%' );
     </script>
 {% endblock %}
 

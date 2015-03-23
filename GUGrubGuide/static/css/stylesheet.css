@@ -297,7 +297,8 @@ fieldset[disabled] .btn-primary.active {
     border-color: #3E84C2;
 }
 
-.jumbotron{
+.jumbotro {
+    background: #162e77;
     color: #ffffff;
     background-attachment: fixed;
 }
