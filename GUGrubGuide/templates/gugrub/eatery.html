@@ -2,17 +2,22 @@
 
 {% load staticfiles %}
 
+
 {% block title %}{{eatery_name}}{% endblock %}
 
 {% block body_block %}
     <div class="page-header">
         <h1>{{ eatery.name }}</h1>
         <img src="{{MEDIA_URL}}{{eatery.picture}}"/>
-        <p>{{eatery.averageQualityRating}}
-        {{eatery.averageValueRating}}
-        {{eatery.averageAtmosphereRating}}
-        {{eatery.averageServiceRating}}
-        {{eatery.averageRecommendRating}}</p>
+
+
+        <p>Average Rating: <span class="stars">{{eatery.averageRating}}</span></p>
+        <p>Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span>
+        <p>Average Value Rating: <span class="stars">{{eatery.averageValueRating}}</span>
+        <p>Average Atmosphere Rating: <span class="stars">{{eatery.averageAtmosphereRating}}</span>
+        <p>Average Service Rating: <span class="stars">{{eatery.averageServiceRating}}</span>
+        <p>Average Recommend Rating: <span class="stars">{{eatery.averageRecommendRating}}</span>
+
 
                 {% if eatery %}
         {% if reviews %}
@@ -73,6 +78,12 @@
         <label for="rating1">1</label>
       </span>
     </p>
+
+ <script>
+$(function() {
+    $('span.stars').stars();
+});
+</script>
 
 {% endblock %}
 
