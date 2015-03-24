@@ -1,0 +1,46 @@
+{% extends "gugrub/base.html" %}
+
+{% block body_block %}
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome Back! - Login</h1>
+            <form class="form-signin" role="form" method="post" action=".">
+	{% csrf_token %}
+
+     <div class="container">
+<div class="col-sm-4">
+
+	{% if form.errors %}
+    <div class="form-group has-error">
+        {{ form.non_field_errors }}
+    </div>
+	{% endif %}
+
+	{% if form.username %}
+	<div class="form-group">
+		<label for="username" class="sr-only">Email address</label>
+		<input class="form-control" placeholder="Username" id="username" maxlength="254" name="username" type="text" required autofocus=""/>
+	</div>
+	{% endif %}
+	{% if form.password %}
+	<div class="form-group">
+		<label for="password" class="sr-only">Password</label>
+		<input type="password" class="form-control" placeholder="Password" id="password" name="password" type="password" required />
+	</div>
+	{% endif %}
+
+
+	<div class="form-group">
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />Sign in</button>
+	</div>
+    <p>Not  a member? <a href="{% url 'registration_register' %}">Register</a>!</p>
+
+     </div>
+</div>
+</form>
+        </div>
+    </div>
+
+{% endblock %}

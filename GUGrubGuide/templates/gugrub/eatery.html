@@ -1,0 +1,120 @@
+{% extends 'gugrub/base.html' %}
+
+
+
+
+{% block title %}{{eatery_name}}{% endblock %}
+
+{% block body_block %}
+
+{% if eatery %}
+<div class="jumbotron">
+
+    <div class="row">
+        <div class="col-md-6">
+
+                    <h1><span>{{eatery.name}}</span></h1>
+
+                    <span class="stars">{{eatery.averageRating}}</span>
+
+                    <p>{{eatery.location}}</p>
+
+                    <p>{{eatery.description}}</p>
+
+                    <p><a class="btn btn-success btn-lg" href="{% url 'add_eatery_review' eatery.slug %}">Add a Review<i class="icon icon-angle-right"></i></a></p>
+
+        </div>
+        <div class="col-md-6">
+            <a class="img-responsive"><img class="media-object" src="{{MEDIA_URL}}{{eatery.picture}}"/></a>
+            <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                                <h4 class="shorter">Average Quality Rating: <span class="stars">{{eatery.averageQualityRating}}</span></h4>
+                        </div>
+                        <div class="feature-box">
+                                <h4 class="shorter">Average Value Rating: <span class="stars">{{eatery.averageValueRating}}</span></h4>
+                        </div>
+                              <div class="feature-box">
+                                <h4 class="shorter">Average Atmosphere Rating: <span class="stars">{{eatery.averageAtmosphereRating}}</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                                <h4 class="shorter">Average Service Rating: <span class="stars">{{eatery.averageServiceRating}}</span></h4>
+                        </div>
+                        <div class="feature-box">
+                                <h4 class="shorter">Average Recommend Rating: <span class="stars">{{eatery.averageRecommendRating}}</span></h4>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+        {% else %}
+            The specified eatery {{ eatery_name }} does not exist!
+        {% endif %}
+
+
+        {% if reviews %}
+        {% for review in reviews %}
+<section class="slider" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+            <div class="reviewLeft">
+            <h1><strong>{{ review.title }}</strong></h1>
+            <h2>Description: </h2>
+            <h3>{{review.description}}</h3>
+            <h2><strong>Final Rating</strong><span class="stars">{{review.finalRating}}</span></h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                                <h3 class="shorter">Quality Rating: <span class="stars">{{review.qualityRating}}</span></h3>
+                        </div>
+                        <div class="feature-box">
+                                <h3 class="shorter">Value Rating: <span class="stars">{{review.valueRating}}</span></h3>
+                        </div>
+                        <div class="feature-box">
+                                <h3 class="shorter">Atmosphere Rating: <span class="stars">{{review.atmosphereRating}}</span></h3>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                                <h3 class="shorter">Service Rating: <span class="stars">{{review.recommendRating}}</span></h3>
+                        </div>
+                        <div class="feature-box">
+                                <h3 class="shorter">Recommend Rating: <span class="stars">{{review.recommendRating}}</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="userDate">User: {{review.reviewer}} Date: {{review.date}}</h4>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="reviewRight">
+                {% if review.picture %}
+                <a class="img-responsive"><img class="media-object" src="{{MEDIA_URL}}{{review.picture}}"/></a>
+                {% else %}
+                <a class="img-responsive"><img class="media-object" src="{{MEDIA_URL}}/cafe.png"/></a>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                {% endfor %}
+                {% else %}
+                <strong>No reviews currently.</strong>
+            {% endif %}
+
+
+ <script>
+$(function() {
+    $('span.stars').stars();
+});
+</script>
+
+{% endblock %}
+
