@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <div class="container">
         <h1>Sign Up Here</h1>
-<form role="form"  method="post" action=".">
+<form name="regForm" role="form" onsubmit="return validateForm()" method="post" action=".">
 
     {% csrf_token %}
     <div class="container">
@@ -39,4 +39,45 @@
 </form>
         </div>
     </div>
+<script>
+
+    function validateForm() {
+        var u = document.forms["regForm"]["id_username"].value;
+        if (u == null || u == "") {
+            alert("Username must be filled out");
+            return false;
+        }
+        var e = document.forms["regForm"]["id_email"].value;
+        if (e == null || e == "") {
+            alert("Email must be filled out");
+            return false;
+        }
+        function endsWith(str, suffix) {
+            return str.indexOf(suffix, str.length - suffix.length) !== -1;
+        }
+
+        var end = '@student.gla.ac.uk';
+        if(!endsWith(e, end)) {
+            alert("Please use a Glasgow University Student Email Address");
+            return false;
+        }
+
+        var p1 = document.forms["regForm"]["id_password1"].value;
+        if (p1 == null || p1 == "") {
+            alert("Password must be filled out");
+            return false;
+        }
+
+        var p2 = document.forms["regForm"]["id_password2"].value;
+        if (p2 == null || p2 == "") {
+            alert("Password must be filled out");
+            return false;
+        }
+        if (p2 !== p1) {
+            alert("Passwords do not match");
+            return false;
+        }
+
+    }
+</script>
 {% endblock %}

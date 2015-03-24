@@ -41,7 +41,7 @@ def populate():
                                url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
 
     cafe_links = add_eatery(name="Links Cafe",
-                               loc="off the Courtyard, Wolfson Building[B10]",
+                               loc="Off the Courtyard, Wolfson Building[B10]",
                                desc="For students, staff and visitors to the campus: hot meals and snacks",
                                url="http://www.gla.ac.uk/services/hospitality/eatingoncampus/")
 
@@ -71,7 +71,7 @@ def populate():
 
     add_review(eatery=garscube_campus,
                 rvr= user,
-                title="School of Veterinary Medicine",
+                title="Tasty Lunch!",
                 desc="Delicious food, but a little pricey.",
                 qualR=4,
                 valR=2,
@@ -81,7 +81,7 @@ def populate():
 
     add_review(eatery=cafe_focus,
                 rvr= user,
-                title="Level 3, University Library [D11]",
+                title="Great Coffee",
                 desc="Great for a quick coffee when you're studying.",
                 qualR=5,
                 valR=4,

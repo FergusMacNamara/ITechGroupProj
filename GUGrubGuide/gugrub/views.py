@@ -11,6 +11,12 @@ def index(request):
 
     context_dict = {}
 
+    eatery_list = Eatery.objects.order_by('name')
+
+    for eatery in eatery_list:
+        reviews = Review.objects.filter(eatery=eatery)
+        eatery.averageRating = reviews.aggregate(Avg('finalRating')).get('finalRating__avg')
+
     eatery_listAvg = Eatery.objects.order_by('averageRating')[:6]
 
     for eatery in eatery_listAvg:
@@ -26,6 +32,7 @@ def index(request):
 
     context_dict['eateries_avg'] = eatery_listAvg
     context_dict['eateries_new'] = eatery_listNew
+    context_dict['eateries'] = eatery_list
 
     # Render the response and send it back!
     return render(request, 'gugrub/index.html', context_dict)
@@ -45,9 +52,9 @@ def eatery(request, eatery_name_slug):
         eatery.averageAtmosphereRating = reviews.aggregate(Avg('atmosphereRating')).get('atmosphereRating__avg', 0.00)
         eatery.averageServiceRating = reviews.aggregate(Avg('serviceRating')).get('serviceRating__avg', 0.00)
         eatery.averageRecommendRating = reviews.aggregate(Avg('recommendRating')).get('recommendRating__avg', 0.00)
-        eatery.averageRating = reviews.aggregate(Avg('finalRating')).get('finalRating__avg')
+        eatery.averageRating = reviews.aggregate(Avg('finalRating')).get('finalRating__avg', 0.00)
 
-        context_dict['reviews'] = reviews
+        context_dict['reviews'] = reviews.order_by('-date')
 
         context_dict['eatery'] = eatery
 

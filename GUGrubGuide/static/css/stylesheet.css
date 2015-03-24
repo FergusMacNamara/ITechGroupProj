@@ -651,3 +651,59 @@ footer *{
     color: #003865;
     word-wrap: break-word;
 }
+.jumbotron-eateries {
+    background: #0067bb;
+}
+.logo-heading {
+    margin-top : 0%;
+}
+.jumbotron-heading {
+    padding: 0%;
+}
+
+.eatery-image {
+    max-height: 500px;
+    max-width: 600px;
+    margin-top: 20%;
+}
+
+.head-ratings {
+    margin-top: -140px;
+    margin-bottom: 0px;
+    margin-left: 50px;
+}
+
+#head-ratings {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 50px;
+}
+.head-text {
+    margin-top: -90px;
+}
+
+.userDate {
+    text-align: right;
+    font-style: italic;
+}
+
+.reviewLeft {
+    border-radius: 10%;
+    border: medium;
+    border-color: #003865;
+    background: #ffffff;
+    color: #003865;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 0%;
+}
+.reviewRight {
+    color: #003865;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 0%;
+}

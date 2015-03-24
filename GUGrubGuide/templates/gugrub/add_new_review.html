@@ -6,7 +6,7 @@
 
 {% block body_block %}
     <img src="/static/images/header.png" style="width: 100%"/>
-        <form id="review_form" method="post" action="/gugrub/add_new_review/" enctype="multipart/form-data">
+        <form name="newRevForm" id="review_form" method="post" action="/gugrub/add_new_review/" enctype="multipart/form-data">
 
             {% csrf_token %}
             {% for hidden in form.hidden_fields %}
@@ -17,7 +17,7 @@
 
     <!--</div>-->
 <div class="jumbotron" id="frame" >
-		<h1>Start your review</h1>
+		<h2>Start your review</h2>
             {% if form.eatery %}
     
 	<h3> Choose an eatery </h3>

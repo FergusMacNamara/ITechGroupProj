@@ -6,102 +6,141 @@
 
 {% block body_block %}
 
-    <div class="jumbotron">
+    <div class="jumbotron jumbotron-heading">
         <div class="container">
             <img src="{% static "images/logo.png" %}" alt="GUGrubGuide Logo"/>
 
             <h1>Welcome!</h1>
 
-            <p>The Glasgow Univeristy Grub Guide allows you to rate your (least) favourite cafes, resturants and coffee
+            <p>The Glasgow University Grub Guide allows you to rate your favourite (or least favourite!) cafes, resturants and coffee
                 shops on the Glasgow
                 University campus.</p>
         </div>
     </div>
-
-    <p>{{ avgQ }}</p>
-    <div class="container">
-        <ul id="myTab" class="nav nav-tabs" role="tablist" style="border-bottom: 0; padding-left: 15px; padding-bottom: 5px">
-            <li class="active" role="presentation">
-                <a id="tab-tab" aria-expanded="true" aria-controls="top" data-toggle="tab" role="tab" href="#top">
-                    Top Rated
-                </a>
-            </li>
-            <li class="" role="presentation">
-                <a id="new-tab" aria-expanded="true" aria-controls="new" data-toggle="tab" role="tab" href="#new">
-                    Recently Added
-                </a>
-            </li>
-        </ul>
-        <div id="myTabContent" class="tab-content">
-            <div id="top" class="tab-pane fade" aria-labelledby="top-tab" role="tabpanel">
-                {% if eateries_avg %}
-                    <div>
-                        {% for eatery in eateries_avg %}
-                            <div class="col-md-4">
-                                <div class="panel panel-info" style="height: 425px;">
-                                    <div class="panel-heading">
-                                        <a href="/gugrub/eatery/{{ eatery.slug }}">
-                                            <paneltitle>{{ eatery.name }}</paneltitle>
-                                        </a>
-                                        <span class="stars">
-                                            {{ eatery.averageRating }}
-                                        </span>
+    <div class="jumbotron jumbotron-eateries">
+        <div class="container">
+            <ul id="myTab" class="nav nav-tabs" role="tablist" style="border-bottom: 0; padding-left: 15px; padding-bottom: 5px">
+                <li class="active" role="presentation">
+                    <a id="tab-tab" aria-expanded="true" aria-controls="top" data-toggle="tab" role="tab" href="#top">
+                        Top Rated
+                    </a>
+                </li>
+                <li class="" role="presentation">
+                    <a id="new-tab" aria-expanded="true" aria-controls="new" data-toggle="tab" role="tab" href="#new">
+                        Recently Added
+                    </a>
+                </li>
+                <li class="" role="presentation">
+                    <a id="all-tab" aria-expanded="true" aria-controls="all" data-toggle="tab" role="tab" href="#all">
+                        All
+                    </a>
+                </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div id="top" class="tab-pane fade" aria-labelledby="top-tab" role="tabpanel">
+                    {% if eateries_avg %}
+                        <div>
+                            {% for eatery in eateries_avg %}
+                                <div class="col-md-4">
+                                    <div class="panel panel-info" style="height: 425px;">
+                                        <div class="panel-heading">
+                                            <a href="/gugrub/eatery/{{ eatery.slug }}">
+                                                <paneltitle>{{ eatery.name }}</paneltitle>
+                                            </a>
+                                            <span class="stars">
+                                                {{ eatery.averageRating }}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <img src="{{ MEDIA_URL }}{{ eatery.picture }}" height="200" width="350"/>
+                                        </div>
+                                        <div>
+                                            <pdesc> {{ eatery.description }} </pdesc>
+                                        </div>
+                                        <p>
+                                            <a class="btn btn-default" href="/gugrub/eatery/{{ eatery.slug }}"
+                                               role="button">See
+                                                reviews for {{ eatery.name }} &raquo;</a>
+                                        </p>
                                     </div>
-                                    <div>
-                                        <img src="{{ MEDIA_URL }}{{ eatery.picture }}" height="200" width="350"/>
-                                    </div>
-                                    <div>
-                                        <pdesc> {{ eatery.description }} </pdesc>
-                                    </div>
-                                    <p>
-                                        <a class="btn btn-default" href="/gugrub/eatery/{{ eatery.slug }}"
-                                           role="button">See
-                                            reviews for {{ eatery.name }} &raquo;</a>
-                                    </p>
                                 </div>
-                            </div>
-                        {% endfor %}
-                    </div>
+                            {% endfor %}
+                        </div>
 
-                {% else %}
-                    <strong>There are no eateries present.</strong>
-                {% endif %}
-            </div>
-            <div id="new" class="tab-pane fade active in" aria-labelledby="new-tab" role="tabpanel">
-                {% if eateries_new %}
-                    <div>
-                        {% for eatery in eateries_new %}
-                            <div class="col-md-4">
-                                <div class="panel panel-info" style="height: 425px;">
-                                    <div class="panel-heading">
-                                        <a href="/gugrub/eatery/{{ eatery.slug }}">
-                                            <paneltitle>{{ eatery.name }}</paneltitle>
-                                        </a>
-                                        <span class="stars">
-                                            {{ eatery.averageRating }}
-                                        </span>
+                    {% else %}
+                        <strong>There are no eateries present.</strong>
+                    {% endif %}
+                </div>
+                <div id="new" class="tab-pane fade active in" aria-labelledby="new-tab" role="tabpanel">
+                    {% if eateries_new %}
+                        <div>
+                            {% for eatery in eateries_new %}
+                                <div class="col-md-4">
+                                    <div class="panel panel-info" style="height: 425px;">
+                                        <div class="panel-heading">
+                                            <a href="/gugrub/eatery/{{ eatery.slug }}">
+                                                <paneltitle>{{ eatery.name }}</paneltitle>
+                                            </a>
+                                            <span class="stars">
+                                                {{ eatery.averageRating }}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <img src="{{ MEDIA_URL }}{{ eatery.picture }}" height="200" width="350"/>
+                                        </div>
+                                        <div>
+                                            <pdesc> {{ eatery.description }} </pdesc>
+                                        </div>
+                                        <p>
+                                            <a class="btn btn-default" href="/gugrub/eatery/{{ eatery.slug }}"
+                                               role="button">See
+                                                reviews for {{ eatery.name }} &raquo;</a>
+                                        </p>
                                     </div>
-                                    <div>
-                                        <img src="{{ MEDIA_URL }}{{ eatery.picture }}" height="200" width="350"/>
-                                    </div>
-                                    <div>
-                                        <pdesc> {{ eatery.description }} </pdesc>
-                                    </div>
-                                    <p>
-                                        <a class="btn btn-default" href="/gugrub/eatery/{{ eatery.slug }}"
-                                           role="button">See
-                                            reviews for {{ eatery.name }} &raquo;</a>
-                                    </p>
                                 </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% else %}
-                    <strong>There are no eateries present.</strong>
-                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <strong>There are no eateries present.</strong>
+                    {% endif %}
+                </div>
+
+                <div id="all" class="tab-pane fade" aria-labelledby="all-tab" role="tabpanel">
+                    {% if eateries %}
+                        <div>
+                            {% for eatery in eateries %}
+                                <div class="col-md-4">
+                                    <div class="panel panel-info" style="height: 425px;">
+                                        <div class="panel-heading">
+                                            <a href="/gugrub/eatery/{{ eatery.slug }}">
+                                                <paneltitle>{{ eatery.name }}</paneltitle>
+                                            </a>
+                                            <span class="stars">
+                                                {{ eatery.averageRating }}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <img src="{{ MEDIA_URL }}{{ eatery.picture }}" height="200" width="350"/>
+                                        </div>
+                                        <div>
+                                            <pdesc> {{ eatery.description }} </pdesc>
+                                        </div>
+                                        <p>
+                                            <a class="btn btn-default" href="/gugrub/eatery/{{ eatery.slug }}"
+                                               role="button">See
+                                                reviews for {{ eatery.name }} &raquo;</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <strong>There are no eateries present.</strong>
+                    {% endif %}
+                </div>
+
             </div>
         </div>
-    </div>
     <script>
         $(function () {
             $('span.stars').stars();
