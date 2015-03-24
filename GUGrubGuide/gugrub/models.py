@@ -37,7 +37,7 @@ class Review(models.Model):
         reviewer = models.ForeignKey(User)
         date = models.DateTimeField(default=datetime.now, blank=True)
         title = models.CharField(max_length=128)
-        description = models.TextField(blank=True, null=True)
+        description = models.TextField(max_length=400, blank=True, null=True)
         qualityRating = models.IntegerField(choices=CHOICES, default=0)
         valueRating = models.IntegerField(choices=CHOICES, default=0)
         atmosphereRating = models.IntegerField(choices=CHOICES, default=0)
